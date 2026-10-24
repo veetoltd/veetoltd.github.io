@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Veeto Ltd</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Veeto Ltd is a London-registered technology company: IT consulting and contracting, the ITYELABS game studio, and Console & PC Gaming.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Veeto Ltd">
+<meta property="og:description" content="Technology consulting, the ITYELABS game studio and Console & PC Gaming.">
+<meta property="og:image" content="https://veetoltd.github.io/img/cover.jpg">
+<meta property="og:url" content="https://veetoltd.github.io/">
+<link rel="icon" type="image/png" href="img/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800;100,400;100,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html, body { margin: 0; } img { max-width: 100%; height: auto; }
+/* Layout: a company register page - a plain statement up top, the three divisions as numbered entries in the company's
+   own ledger, then the statutory details printed like a Companies House record. Light paper with a cool green bias. */
+:root {
+  --paper: #f2f4f1;     /* page */
+  --sheet: #ffffff;     /* raised panels */
+  --ink: #14211c;       /* text */
+  --muted: #5b6862;     /* secondary text */
+  --rule: #d5dbd6;      /* hairlines */
+  --signal: #19694f;    /* accent: Veeto green */
+  --ember: #c9622a;     /* the games division */
+  --f-display: "Archivo", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Archivo", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper: #0f1513; --sheet: #161e1b; --ink: #e8eee9; --muted: #9aa8a1; --rule: #2a3530; --signal: #4fbf93; --ember: #ee8a4f; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --paper: #0f1513; --sheet: #161e1b; --ink: #e8eee9; --muted: #9aa8a1; --rule: #2a3530; --signal: #4fbf93; --ember: #ee8a4f; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.65 var(--f-body); font-stretch: 100%; }
+a { color: var(--signal); }
+a:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--f-display); font-stretch: 112%; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font: 500 0.78rem/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* header */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 14px; }
+.brand { font: 800 1.35rem/1 var(--f-display); font-stretch: 112%; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; display: flex; align-items: baseline; gap: 8px; }
+.brand small { font: 500 0.75rem/1 var(--f-mono); letter-spacing: 0.06em; color: var(--muted); }
+.top nav { display: flex; gap: clamp(12px, 2.6vw, 30px); flex-wrap: wrap; justify-content: flex-end; }
+.top nav a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+.top nav a:hover { color: var(--ink); }
+@media (max-width: 600px) { .top nav a.opt { display: none; } }
+
+/* intro */
+.intro { padding-block: clamp(56px, 10vw, 120px) clamp(40px, 6vw, 72px); border-bottom: 1px solid var(--rule); }
+.intro .wrap { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: end; }
+.intro h1 { font-size: clamp(2.6rem, 6.4vw, 5rem); }
+.intro h1 em { font-style: normal; color: var(--signal); }
+.intro .lede { color: var(--muted); font-size: 1.15rem; max-width: 46ch; }
+.intro .facts { display: grid; gap: 0; border-top: 1px solid var(--ink); }
+.intro .facts div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 0.95rem; }
+.intro .facts span:first-child { color: var(--muted); }
+.intro .facts span:last-child { font-family: var(--f-mono); font-size: 0.9rem; text-align: right; }
+@media (max-width: 820px) { .intro .wrap { grid-template-columns: 1fr; } }
+
+/* divisions */
+.divisions { padding-block: clamp(48px, 8vw, 96px); }
+.divisions > .wrap > .head { display: grid; gap: 10px; margin-bottom: clamp(28px, 4vw, 44px); }
+.divisions h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+.entry { display: grid; grid-template-columns: 72px minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 3.5vw, 48px); padding-block: clamp(28px, 4vw, 44px); border-top: 1px solid var(--rule); align-items: start; }
+.entry:last-child { border-bottom: 1px solid var(--rule); }
+.entry .no { font: 500 0.9rem/1 var(--f-mono); color: var(--muted); padding-top: 8px; }
+.entry .text { display: grid; gap: 14px; min-width: 0; }
+.entry h3 { font-size: clamp(1.5rem, 2.8vw, 2rem); }
+.entry .kind { font: 500 0.78rem/1 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--c, var(--signal)); }
+.entry p { color: var(--muted); max-width: 52ch; }
+.entry ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.entry li { padding-left: 18px; position: relative; }
+.entry li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 8px; height: 2px; background: var(--c, var(--signal)); }
+.entry .media { min-width: 0; }
+.entry .media img { width: 100%; max-width: 100%; display: block; border: 1px solid var(--rule); }
+.entry .logos { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.entry .logos img { border: 0; }
+.links { display: flex; gap: 10px; flex-wrap: wrap; }
+.links a { font-weight: 600; font-size: 0.95rem; text-decoration: none; padding: 10px 14px; border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); }
+.links a:hover { border-color: var(--c, var(--signal)); }
+.tile { background: var(--sheet); border: 1px solid var(--rule); padding: 22px; display: grid; gap: 14px; }
+.tile .row { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-size: 0.95rem; }
+.tile .row:last-child { border-bottom: 0; padding-bottom: 0; }
+.tile .row span:first-child { color: var(--muted); }
+@media (max-width: 860px) { .entry { grid-template-columns: 1fr; gap: 16px; } .entry .no { padding-top: 0; } }
+
+/* contact + register */
+.close { background: var(--sheet); border-top: 1px solid var(--rule); padding-block: clamp(48px, 8vw, 88px); }
+.close .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); }
+.close h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 14px; }
+.close p { color: var(--muted); max-width: 46ch; }
+.mail { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.mail code { font: 500 1rem/1 var(--f-mono); padding: 12px 14px; border: 1px solid var(--rule); background: var(--paper); user-select: all; overflow-wrap: anywhere; }
+.mail button { font: 600 0.9rem/1 var(--f-body); padding: 12px 14px; border: 1px solid var(--signal); background: var(--signal); color: var(--paper); cursor: pointer; }
+.mail button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.register { font-family: var(--f-mono); font-size: 0.9rem; border: 1px solid var(--rule); }
+.register div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--rule); }
+.register div:last-child { border-bottom: 0; }
+.register dt { color: var(--muted); }
+.register dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 820px) { .close .wrap { grid-template-columns: 1fr; } }
+@media (max-width: 460px) { .register div { grid-template-columns: 1fr; gap: 2px; } }
+
+footer { padding-block: 26px 40px; border-top: 1px solid var(--rule); }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">VEETO <small>LTD</small></a>
+    <nav aria-label="Sections">
+      <a href="#consulting" class="opt">Consulting</a>
+      <a href="#ityelabs" class="opt">ITYELABS</a>
+      <a href="#media" class="opt">Media</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="intro">
+    <div class="wrap">
+      <div style="display:grid;gap:22px">
+        <span class="eyebrow">Technology · Games · Media</span>
+        <h1>We build <em>software</em>, games and the channel that shows them off.</h1>
+        <p class="lede">Veeto Ltd is a London-registered technology company. It provides IT consulting and contracting to businesses, runs the ITYELABS game studio, and publishes Console &amp; PC Gaming.</p>
+      </div>
+      <div class="facts" aria-label="Company at a glance">
+        <div><span>Company</span><span>VEETO LTD</span></div>
+        <div><span>Company number</span><span>15877216</span></div>
+        <div><span>Incorporated</span><span>5 Aug 2024</span></div>
+        <div><span>Status</span><span>Active</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="divisions">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">What Veeto does</span>
+        <h2>Three lines of work</h2>
+      </div>
+
+      <article class="entry" id="consulting">
+        <span class="no">01</span>
+        <div class="text">
+          <span class="kind">IT consulting &amp; contracting</span>
+          <h3>Engineering for client teams</h3>
+          <p>Veeto places experienced engineers inside client teams to design, build and deliver technology projects, on a contract or project basis.</p>
+          <ul>
+            <li>Software and systems delivery</li>
+            <li>Technical consulting and project support</li>
+            <li>Flexible contract engagements, invoiced through Veeto Ltd</li>
+          </ul>
+        </div>
+        <div class="media">
+          <div class="tile">
+            <div class="row"><span>Engagements</span><span>Contract and project</span></div>
+            <div class="row"><span>Based in</span><span>London, UK</span></div>
+            <div class="row"><span>Availability</span><span>Enquire below</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry" id="ityelabs" style="--c: var(--ember)">
+        <span class="no">02</span>
+        <div class="text">
+          <span class="kind">Game studio</span>
+          <h3>ITYELABS</h3>
+          <p>The studio is making <strong>Chronoshift</strong> in Unreal Engine 5. It's a third-person survival adventure through Earth's past, starting sixty-six million years ago in the Dinosaur Era.</p>
+          <ul>
+            <li>Era 1, the Dinosaur Era, is in development</li>
+            <li>Power-ups, creature morphs and a volcano boss</li>
+            <li>Twelve more eras planned, from the Ice Age to the future</li>
+          </ul>
+          <div class="links">
+            <a href="https://veetoltd.github.io/chronoshift/">Visit the Chronoshift site</a>
+            <a href="https://www.youtube.com/@ConsolePCGaming" target="_blank" rel="noopener">Watch the trailer</a>
+          </div>
+        </div>
+        <div class="media" style="display:grid;gap:14px">
+          <img src="img/cover.jpg" alt="Chronoshift cover art: the hero under a rock arch looking out at a volcano beneath a swirling time portal" width="1920" height="1080" loading="lazy">
+          <div class="logos"><img src="img/ityelabs.jpg" alt="ITYELABS logo" width="96" height="96" style="width:96px;height:96px"></div>
+        </div>
+      </article>
+
+      <article class="entry" id="media" style="--c: var(--ember)">
+        <span class="no">03</span>
+        <div class="text">
+          <span class="kind">Media</span>
+          <h3>Console &amp; PC Gaming</h3>
+          <p>Gaming videos, trailers and development updates across YouTube, X and TikTok.</p>
+          <div class="links">
+            <a href="https://www.youtube.com/@ConsolePCGaming" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://x.com/ConsolePCGaming" target="_blank" rel="noopener">X</a>
+            <a href="https://www.tiktok.com/@consolepcgaming" target="_blank" rel="noopener">TikTok</a>
+          </div>
+        </div>
+        <div class="media">
+          <div class="tile" style="background:#e3e3e3;border-color:var(--rule)"><img src="img/consolepcgaming.png" alt="Console &amp; PC Gaming logo" width="820" height="233" style="border:0"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="close" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Get in touch</h2>
+        <p>For consulting work, studio and press enquiries, or channel partnerships, message Veeto on X or YouTube. A direct email address is coming soon.</p>
+        <div class="links" style="margin-top:18px">
+          <a href="https://x.com/ConsolePCGaming" target="_blank" rel="noopener">X @ConsolePCGaming</a>
+          <a href="https://www.youtube.com/@ConsolePCGaming" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div>
+        <h2>Company details</h2>
+        <dl class="register">
+          <div><dt>Registered name</dt><dd>VEETO LTD</dd></div>
+          <div><dt>Company number</dt><dd>15877216</dd></div>
+          <div><dt>Registered in</dt><dd>England and Wales</dd></div>
+          <div><dt>Registered office</dt><dd>128 City Road, London, EC1V 2NX, United Kingdom</dd></div>
+          <div><dt>Company type</dt><dd>Private limited company</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Veeto Ltd. All rights reserved.</span>
+    <span>This site sets no cookies and collects no data.</span>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
