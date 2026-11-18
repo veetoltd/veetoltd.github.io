@@ -169,6 +169,13 @@ section{padding:96px 0;position:relative}
 .studio{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--card);margin-bottom:28px}
 .studio img{width:100%;height:100%;object-fit:cover;min-height:280px}
 .studio .tx{padding:34px}
+.game{display:block;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--card);margin-bottom:28px;transition:.25s}
+.game:hover{transform:translateY(-4px);border-color:var(--glow,#3dff3a)}
+.game img{width:100%;height:auto;aspect-ratio:1400/781;display:block}
+.game .cap{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;padding:18px 26px}
+.game .cap b{font:700 20px "Exo 2";color:var(--text,#d2ffce)}
+.game .cap span{color:#b6efb2}
+.game .cap .go{font-weight:700;color:#3dff3a;white-space:nowrap}
 .studio h3{font-size:28px;margin:12px 0}
 .studio p{color:#b6efb2;margin-bottom:20px}
 .socials{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
@@ -370,6 +377,11 @@ footer a:hover{color:var(--cyan)}
         <div class="btns"><a class="btn p" href="https://veetoltd.github.io/chronoshift/">See our game: Chronoshift &rarr;</a> <a class="btn s" href="https://suno.com/@ityelabs" target="_blank" rel="noopener">Listen to our music &rarr;</a></div>
       </div>
     </div>
+
+    <a class="game reveal" href="https://veetoltd.github.io/chronoshift/">
+      <img src="img/chronoshift_key_art.jpg" alt="Chronoshift key art: the explorer with his spear and glowing brass gauntlet between a raptor in a burning jungle and a bear and mammoth on cracking ice, under the Chronoshift gear logo. Survive every era." width="1400" height="781" loading="lazy">
+      <div class="cap"><div><b>Chronoshift</b> <span>Our time-travel survival game in Unreal Engine 5. Two eras playable, more on the way.</span></div><span class="go">Explore the game &rarr;</span></div>
+    </a>
 
     <div class="socials">
       <a class="soc yt reveal" href="https://www.youtube.com/@ConsolePCGaming" target="_blank" rel="noopener">
